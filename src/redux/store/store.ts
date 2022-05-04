@@ -1,17 +1,20 @@
 import { createStore } from "redux";
+import { red, green, orange, indigo, cyan, amber } from "@mui/material/colors";
+import { usersToDo, usersData, stateInStore } from "../../types/types";
 
 //Store
-const initialStateToDo = {
+const initialStateToDo: stateInStore = {
   toDo: [],
   inProgress: [],
   done: [],
   user: [],
+  arrayWithColors: [red, green, orange, indigo, cyan, amber],
 };
 
 const reduser = function (
   state = initialStateToDo,
-  action: { type: string; payload: any }
-) {
+  action: { type: string; payload: Array<usersToDo | usersData> }
+): any {
   switch (action.type) {
     case "ACTION_SET_TODO": {
       return { ...state, toDo: action.payload };

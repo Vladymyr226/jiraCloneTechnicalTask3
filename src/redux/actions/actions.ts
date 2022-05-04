@@ -1,6 +1,10 @@
-export const createActionSetToDo = function (toDo: any): {
+import { usersData, usersToDo } from "../../types/types";
+
+export const createActionSetToDo = function (
+  toDo: Array<usersToDo | usersData>
+): {
   type: string;
-  payload: any;
+  payload: Array<usersToDo | usersData>;
 } {
   return {
     type: "ACTION_SET_TODO",
@@ -8,9 +12,11 @@ export const createActionSetToDo = function (toDo: any): {
   };
 };
 
-export const createActionSetInProgress = function (inProgress: any): {
+export const createActionSetInProgress = function (
+  inProgress: Array<usersToDo>
+): {
   type: string;
-  payload: any;
+  payload: Array<usersToDo>;
 } {
   return {
     type: "ACTION_SET_IN_PROGRESS",
@@ -18,9 +24,9 @@ export const createActionSetInProgress = function (inProgress: any): {
   };
 };
 
-export const createActionSetDone = function (done: any): {
+export const createActionSetDone = function (done: Array<usersToDo>): {
   type: string;
-  payload: any;
+  payload: Array<usersToDo>;
 } {
   return {
     type: "ACTION_SET_DONE",
@@ -28,9 +34,11 @@ export const createActionSetDone = function (done: any): {
   };
 };
 
-export const createActionSetUser = function (user: any): {
+export const createActionSetUser = function (
+  user: Array<usersData | usersToDo>
+): {
   type: string;
-  payload: any;
+  payload: Array<usersData | usersToDo>;
 } {
   return {
     type: "ACTION_SET_USER",
